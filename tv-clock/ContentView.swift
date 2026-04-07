@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        return formatter
+    }()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TimelineView(.periodic(from: .now, by: 1)) { context in
+            Text(timeFormatter.string(from: context.date))
+                .font(.system(size: 180, weight: .medium, design: .monospaced))
+                .foregroundStyle(.primary)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
+                .contentTransition(.numericText())
+                .animation(.default, value: context.date)
         }
-        .padding()
     }
 }
 
