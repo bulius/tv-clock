@@ -12,24 +12,42 @@ import SwiftUI
 class SoundManager {
     private var audioPlayer: AVAudioPlayer?
     
+    init() {
+        // Configure audio session to allow mixing with other audio (like Music app)
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.ambient, mode: .default, options: [.mixWithOthers])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to configure audio session: \(error)")
+        }
+        #endif
+    }
+    
     func playTriumphSound() {
-        // Play success/triumph sound
-        playSystemSound(1013) // Success/bell sound
+        // Play "Fanfare" system sound
+        playSystemSound(1324) // Fanfare - triumphant celebratory sound
     }
     
     func playButtonToggleSound(enabled: Bool) {
         if enabled {
-            // Play a positive/confirmation sound when enabling
-            playSystemSound(1057) // Positive chirp
+            // Play a delightful positive sound when enabling
+            playSystemSound(1054) // Positive "bloom" chirp
         } else {
-            // Play a subtle sound when disabling
-            playSystemSound(1104) // Subtle click
+            // Play a gentle sound when disabling
+            playSystemSound(1306) // Gentle tap
         }
     }
     
     func playButtonNavigationSound() {
-        // Play a subtle tick sound when navigating between buttons
-        playSystemSound(1104) // Camera shutter/tick sound
+        // Play a friendly tick sound when navigating between buttons
+        playSystemSound(1123) // Gentle navigation tick
+    }
+    
+    func playResetSound() {
+        // Play a "fresh start" swoosh sound
+        playSystemSound(1102) // Swoosh/reset sound
     }
     
     private func playSystemSound(_ soundID: SystemSoundID) {

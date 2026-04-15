@@ -1,6 +1,8 @@
-# 📖 Documentation Index
+# 📖 Guides - Documentation Index
 
 Quick navigation for your Morning Routine app icon migration.
+
+> 📁 **Location:** All documentation is now organized in the `Guides/` folder
 
 ---
 
@@ -8,7 +10,7 @@ Quick navigation for your Morning Routine app icon migration.
 
 **New to this project?** Start with these:
 
-1. **[MIGRATION_COMPLETE.md](MIGRATION_COMPLETE.md)** ⭐
+1. **[Migration/MIGRATION_COMPLETE.md](Migration/MIGRATION_COMPLETE.md)** ⭐
    - Complete overview of changes
    - Action items and checklist
    - Before/after comparison
@@ -31,21 +33,21 @@ Quick navigation for your Morning Routine app icon migration.
   - Best practices
 
 ### Migration
-- **[MIGRATION_TO_APPICON.md](MIGRATION_TO_APPICON.md)** - Why we migrated
+- **[Migration/MIGRATION_TO_APPICON.md](Migration/MIGRATION_TO_APPICON.md)** - Why we migrated
   - Old vs new workflow
   - Benefits and rationale
   - Migration steps
   - Design preservation
 
 ### Cleanup
-- **[DELETE_THESE_FILES.md](DELETE_THESE_FILES.md)** - File deletion guide
+- **[Migration/DELETE_THESE_FILES.md](Migration/DELETE_THESE_FILES.md)** - File deletion guide
   - What to delete
   - How to delete
   - Verification checklist
   - Rollback plan
 
 ### Reference
-- **[FILES_REMOVED.md](FILES_REMOVED.md)** - Removal record
+- **[Migration/FILES_REMOVED.md](Migration/FILES_REMOVED.md)** - Removal record
   - List of deleted files
   - Reasons for removal
   - Impact summary
@@ -79,19 +81,19 @@ Quick navigation for your Morning Routine app icon migration.
 → [APPICON_GUIDE.md](APPICON_GUIDE.md) (detailed)
 
 ### "I want to understand the changes"
-→ [MIGRATION_COMPLETE.md](MIGRATION_COMPLETE.md) (overview)
-→ [MIGRATION_TO_APPICON.md](MIGRATION_TO_APPICON.md) (details)
+→ [Migration/MIGRATION_COMPLETE.md](Migration/MIGRATION_COMPLETE.md) (overview)
+→ [Migration/MIGRATION_TO_APPICON.md](Migration/MIGRATION_TO_APPICON.md) (details)
 
 ### "I want to clean up old files"
-→ [DELETE_THESE_FILES.md](DELETE_THESE_FILES.md)
+→ [Migration/DELETE_THESE_FILES.md](Migration/DELETE_THESE_FILES.md)
 
 ### "I want the design specs"
 → [QUICK_START.md](QUICK_START.md) (quick reference)
-→ `AppIconGenerator.swift` (full implementation)
+→ `../AppIconGenerator.swift` (full implementation)
 
 ### "Something went wrong"
 → [APPICON_GUIDE.md](APPICON_GUIDE.md) → Troubleshooting section
-→ [DELETE_THESE_FILES.md](DELETE_THESE_FILES.md) → Rollback plan
+→ [Migration/DELETE_THESE_FILES.md](Migration/DELETE_THESE_FILES.md) → Rollback plan
 
 ---
 
@@ -113,19 +115,19 @@ Quick navigation for your Morning Routine app icon migration.
 
 ### Option 1: Fast Track (15 min)
 ```
-1. MIGRATION_COMPLETE.md - Overview
+1. Migration/MIGRATION_COMPLETE.md - Overview
 2. QUICK_START.md - Do it
-3. DELETE_THESE_FILES.md - Clean up
+3. Migration/DELETE_THESE_FILES.md - Clean up
 ```
 
 ### Option 2: Complete (30 min)
 ```
-1. MIGRATION_COMPLETE.md - Overview
-2. MIGRATION_TO_APPICON.md - Context
+1. Migration/MIGRATION_COMPLETE.md - Overview
+2. Migration/MIGRATION_TO_APPICON.md - Context
 3. APPICON_GUIDE.md - Full guide
 4. QUICK_START.md - Quick reference
-5. DELETE_THESE_FILES.md - Clean up
-6. FILES_REMOVED.md - Record
+5. Migration/DELETE_THESE_FILES.md - Clean up
+6. Migration/FILES_REMOVED.md - Record
 ```
 
 ### Option 3: Just Do It (5 min)
@@ -177,28 +179,28 @@ Use this to track your progress:
 - ✅ QUICK_START.md
 
 ### Migration Documentation (Delete After Reading)
-- 🔄 MIGRATION_COMPLETE.md
-- 🔄 MIGRATION_TO_APPICON.md
-- 🔄 DELETE_THESE_FILES.md
-- 🔄 FILES_REMOVED.md
-- 🔄 INDEX.md (this file)
+- 🔄 Migration/MIGRATION_COMPLETE.md
+- 🔄 Migration/MIGRATION_TO_APPICON.md
+- 🔄 Migration/DELETE_THESE_FILES.md
+- 🔄 Migration/FILES_REMOVED.md
+- 🔄 README.md (this file - optional to keep)
 
 ### Source Code (Keep)
-- ✅ AppIconGenerator.swift
-- ✅ ConfettiView.swift
-- ✅ ContentView.swift
-- ✅ SoundManager.swift
-- ✅ tv_clockApp.swift
+- ✅ ../AppIconGenerator.swift
+- ✅ ../ConfettiView.swift
+- ✅ ../ContentView.swift
+- ✅ ../SoundManager.swift
+- ✅ ../tv_clockApp.swift
 
 ### Source Code (Delete)
-- ❌ GenerateAppIcons.swift
-- ❌ ExportIcons.swift
-- ❌ IconExportTool.swift
+- ❌ ../GenerateAppIcons.swift
+- ❌ ../ExportIcons.swift
+- ❌ ../IconExportTool.swift
 
 ### Old Documentation (Delete)
-- ❌ INSTALL_ICONS_GUIDE.md
-- ❌ IMPORT_EXISTING_ICONS.md
-- ❌ ICON_EXPORT_README.md
+- ❌ Outdated/INSTALL_ICONS_GUIDE.md
+- ❌ Outdated/IMPORT_EXISTING_ICONS.md
+- ❌ Outdated/ICON_EXPORT_README.md
 
 ---
 
@@ -221,9 +223,15 @@ tv-clock/
 ├── Tests/
 │   └── tv_clockUITests.swift
 │
-└── Docs/
+└── Guides/
+    ├── README.md (this file)
     ├── APPICON_GUIDE.md
-    └── QUICK_START.md
+    ├── QUICK_START.md
+    └── Migration/ (delete after migration)
+        ├── MIGRATION_COMPLETE.md
+        ├── MIGRATION_TO_APPICON.md
+        ├── DELETE_THESE_FILES.md
+        └── FILES_REMOVED.md
 ```
 
 Clean, simple, maintainable! ✨
@@ -249,7 +257,7 @@ See DELETE_THESE_FILES.md → Rollback Plan
 
 **Your next steps:**
 
-1. Open [MIGRATION_COMPLETE.md](MIGRATION_COMPLETE.md)
+1. Open [Migration/MIGRATION_COMPLETE.md](Migration/MIGRATION_COMPLETE.md)
 2. Follow the action items
 3. Enjoy your new workflow!
 
@@ -258,3 +266,4 @@ See DELETE_THESE_FILES.md → Rollback Plan
 Built with ☀️ for your Morning Routine app!
 
 **Last Updated:** April 10, 2026
+**Location:** `Guides/README.md`
